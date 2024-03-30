@@ -1,9 +1,3 @@
-// product_id
-// References the Product model's id.
-
-// tag_id
-// References the Tag model's id.
-
 const { Model, DataTypes } = require("sequelize");
 
 const sequelize = require("../config/connection");
