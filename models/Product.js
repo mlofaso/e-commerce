@@ -1,13 +1,3 @@
-// price
-// Validates that the value is a decimal.
-
-// stock
-// Set a default value of 10.
-// Validates that the value is numeric.
-
-// category_id
-// References the Category model's id.
-
 // import important parts of sequelize library
 const { Model, DataTypes } = require("sequelize");
 // import our database connection from config.js
@@ -23,22 +13,33 @@ Product.init(
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
-      null: false,
+      allowNull: false,
     },
     product_name: {
       type: DataTypes.STRING,
-      null: false,
+      allowNull: false,
     },
     price: {
       type: DataTypes.DECIMAL,
-      null: false,
+      allowNull: false,
+      validate: {
+        isDecimal: true,
+      },
     },
     stock: {
-      type: DataTypes.DECIMAL,
-      null: false,
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      validate: {
+        isNumeric: true,
+      },
+      defaultValue: 10,
     },
     category_id: {
       type: DataTypes.INTEGER,
+      references: {
+        model: "category",
+        key: "id",
+      },
     },
   },
   {
