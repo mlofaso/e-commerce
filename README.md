@@ -8,4 +8,4 @@ Used mysql and sequelize to create a backend server for edited tables in an e-co
 
 ## Walkthrough Video
 
-[Walkthrough Video]()
+[Walkthrough Video](https://drive.google.com/file/d/18qaTH6aimNyPmXHUIPyW7yHHzMqZ_ovY/view?usp=sharing)
